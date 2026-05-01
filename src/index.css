@@ -1,0 +1,267 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+
+  --background: #ffffff;
+  --foreground: #55536d;
+
+  --app-background: #f4f4fb;
+  --card: #ffffff;
+  --card-foreground: #55536d;
+
+  --primary: #6c63ff;
+  --primary-foreground: #ffffff;
+  --primary-hover: #5b54df;
+
+  --sidebar: #3f3d56;
+  --sidebar-foreground: #d7d6e3;
+  --sidebar-active: #ffffff;
+  --sidebar-active-bg: rgba(255, 255, 255, 0.08);
+
+  --header-background: #ffffff;
+  --header-foreground: #55536d;
+
+  --muted: #f5f6fb;
+  --muted-foreground: #a5a3b9;
+  --border: #ececf4;
+  --input: #ffffff;
+
+  --danger: #ff7f7f;
+  --danger-foreground: #ffffff;
+  --danger-hover: #f26f6f;
+
+  --event-primary: #4285f4;
+  --event-blue: #4285f4;
+  --event-green: #35b779;
+  --event-purple: #8b5cf6;
+  --event-orange: #f59e0b;
+  --event-red: #ef4444;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-app-background: var(--app-background);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-hover: var(--primary-hover);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-active: var(--sidebar-active);
+  --color-sidebar-active-bg: var(--sidebar-active-bg);
+
+  --color-header-background: var(--header-background);
+  --color-header-foreground: var(--header-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+
+  --color-danger: var(--danger);
+  --color-danger-foreground: var(--danger-foreground);
+  --color-danger-hover: var(--danger-hover);
+
+  --color-event-primary: var(--event-primary);
+  --color-event-blue: var(--event-blue);
+  --color-event-green: var(--event-green);
+  --color-event-purple: var(--event-purple);
+  --color-event-orange: var(--event-orange);
+  --color-event-red: var(--event-red);
+
+  --font-sans:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+.fc {
+  --fc-border-color: var(--border);
+  --fc-page-bg-color: var(--card);
+  --fc-neutral-bg-color: var(--muted);
+  --fc-today-bg-color: rgba(66, 133, 244, 0.08);
+  --fc-event-text-color: #ffffff;
+
+  font-family: var(--font-sans);
+}
+
+.fc .fc-scrollgrid {
+  border-radius: 0;
+  overflow: hidden;
+  border-color: var(--border);
+}
+
+.fc .fc-col-header-cell {
+  background: #f7f7fc;
+  padding: 10px 0;
+}
+
+.fc .fc-col-header-cell-cushion {
+  color: #b3b1c4;
+  font-size: 11px;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.fc .fc-daygrid-day-number {
+  padding: 10px;
+  color: #6e6b84;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.fc .fc-timegrid-slot-label {
+  color: #a5a3b9;
+  font-size: 12px;
+}
+
+.fc .fc-daygrid-event-harness {
+  margin-top: 2px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.fc .calendar-event {
+  min-height: 28px;
+  border-width: 1px !important;
+  border-style: solid !important;
+  border-radius: 4px;
+  padding: 0 !important;
+  cursor: pointer;
+  box-shadow: none;
+  overflow: hidden;
+  color: #ffffff !important;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.fc .calendar-event:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(57, 56, 86, 0.14);
+}
+
+.fc .calendar-event-selected {
+  background-color: #ffffff !important;
+  color: var(--calendar-event-color) !important;
+  border-color: var(--calendar-event-color) !important;
+  box-shadow:
+    0 0 0 1px var(--calendar-event-color),
+    0 10px 24px rgba(57, 56, 86, 0.18);
+}
+
+.fc .calendar-event-content {
+  display: flex;
+  min-width: 0;
+  height: 100%;
+  align-items: center;
+  gap: 4px;
+  overflow: hidden;
+  padding: 5px 12px;
+  line-height: 1;
+}
+
+.fc .calendar-event-time {
+  flex-shrink: 0;
+  font-size: 10px;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.fc .calendar-event-title {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.fc .fc-timegrid-event .calendar-event-content {
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 3px;
+  padding: 6px 8px;
+}
+
+.fc .fc-timegrid-event .calendar-event-title {
+  font-size: 12px;
+}
+
+.fc .fc-timegrid-event .calendar-event-time {
+  font-size: 10px;
+}
+
+.fc .fc-list {
+  border-color: var(--border);
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.fc .fc-list-day-cushion {
+  background: var(--muted);
+}
+
+.fc-theme-standard td,
+.fc-theme-standard th {
+  border-color: var(--border);
+}
+
+.fc .fc-day-today {
+  background: rgba(66, 133, 244, 0.05) !important;
+}
+
+@layer utilities {
+  .ease-pop {
+    transition-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+}
+
+.fc .fc-daygrid-event {
+  margin-inline: 1px;
+}
+
+.fc .fc-daygrid-block-event .fc-event-main {
+  color: inherit;
+}
+
+.fc .fc-daygrid-event .fc-event-main {
+  color: inherit;
+}
+
+.fc .fc-timegrid-event-harness {
+  padding-left: 2px !important;
+  padding-right: 2px !important;
+}
+
+.fc .fc-timegrid-event-harness .calendar-event {
+  margin-left: 2px !important;
+  margin-right: 2px !important;
+}
