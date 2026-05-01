@@ -160,7 +160,7 @@ const EventModal = () => {
             type="button"
             onClick={handleClose}
             aria-label="Close modal"
-            className="cursor-pointer absolute top-4 right-4 z-[100] flex h-9 w-9 items-center justify-center rounded-full border border-[#d7d7e3] text-[#c3c3cf] transition-colors hover:border-[#b8b7c8] hover:text-[#8d8ca3]"
+            className="absolute top-4 right-4 z-[100] flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-[#d7d7e3] text-[#c3c3cf] transition-colors hover:border-[#b8b7c8] hover:text-[#8d8ca3]"
           >
             <IoCloseOutline className="h-6 w-6" />
           </button>

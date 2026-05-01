@@ -44,7 +44,7 @@ const CalendarToolbar = ({
                 type="button"
                 onClick={() => onChangeView(view.value)}
                 className={clsx(
-                  "cursor-pointer h-10 min-w-[64px] border-r border-border px-4 text-[13px] font-semibold transition-colors last:border-r-0",
+                  "h-10 min-w-[64px] cursor-pointer border-r border-border px-4 text-[13px] font-semibold transition-colors last:border-r-0",
                   isActive
                     ? "bg-white text-primary"
                     : "bg-white text-muted-foreground hover:bg-muted hover:text-foreground",
@@ -62,7 +62,7 @@ const CalendarToolbar = ({
           <button
             type="button"
             onClick={onToday}
-            className="cursor-pointer h-10 border-r border-border px-5 text-[13px] font-semibold text-primary transition-colors hover:bg-muted"
+            className="h-10 cursor-pointer border-r border-border px-5 text-[13px] font-semibold text-primary transition-colors hover:bg-muted"
           >
             Today
           </button>
@@ -70,7 +70,7 @@ const CalendarToolbar = ({
           <button
             type="button"
             onClick={onPrev}
-            className="cursor-pointer h-10 border-r border-border px-5 text-[13px] font-semibold text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+            className="h-10 cursor-pointer border-r border-border px-5 text-[13px] font-semibold text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
           >
             Back
           </button>
@@ -78,7 +78,7 @@ const CalendarToolbar = ({
           <button
             type="button"
             onClick={onNext}
-            className="cursor-pointer h-10 px-5 text-[13px] font-semibold text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+            className="h-10 cursor-pointer px-5 text-[13px] font-semibold text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
           >
             Next
           </button>

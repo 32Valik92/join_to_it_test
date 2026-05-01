@@ -42,9 +42,7 @@ const CalendarView = () => {
         backgroundColor: isSelected ? "#ffffff" : colorValue,
         borderColor: colorValue,
         textColor: isSelected ? colorValue : "#ffffff",
-        classNames: isSelected
-          ? ["calendar-event", "calendar-event-selected"]
-          : ["calendar-event"],
+        classNames: isSelected ? ["calendar-event", "calendar-event-selected"] : ["calendar-event"],
         extendedProps: {
           color: eventColor,
           colorValue,
